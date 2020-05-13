@@ -17,7 +17,9 @@ pipeline {
             }
         }
         stage('deploy') {
-            echo 'to be implemented...'
+            steps {
+                echo 'to be implemented...'
+            }                       
         }
     }
 }
