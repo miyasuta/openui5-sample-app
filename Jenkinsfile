@@ -1,25 +1,12 @@
 pipeline {
     agent { docker { image 'node:14-alpine' } }
     stages {
-        stage('prepare') {
-            steps {
-                sh 'npm install'
-            }
-        }
-        stage('test') {
-            steps {
-                sh 'npm run lint'
-            }
-        }
         stage('build') {
             steps {
-                sh 'ui5 build -a'
+                sh 'npm config set @sap:registry https://npm.sap.com'
+                sh 'npm install'
+                sh 'npm run-script build'
             }
-        }
-        stage('deploy') {
-            steps {
-                echo 'to be implemented...'
-            }                       
         }
     }
 }
