@@ -16,6 +16,7 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
+		"@sap/grunt-sapui5-bestpractice-build": "^1.4.2",
 		"@ui5/cli": "^2.2.2",
 		"eslint": "^6.8.0",
 		"karma": "^4.4.1",
