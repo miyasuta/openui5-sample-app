@@ -10,16 +10,15 @@
 		"karma-ci": "rimraf coverage && karma start karma-ci.conf.js",
 		"watch": "npm run karma",
 		"test-o": "npm run lint && npm run karma-ci",
-		"build-o": "ui5 build -a --clean-dest",
+		"build": "ui5 build -a --clean-dest",
 		"test": "grunt testProject --verbose",
-		"build": "grunt buildProject --verbose",
+		"build-o": "grunt buildProject --verbose",
 		"build-self-contained": "ui5 build self-contained -a --clean-dest",
 		"serve-dist": "ws --compress -d dist"
 	},
 	"dependencies": {},
 	"devDependencies": {
 		"@sap/grunt-sapui5-bestpractice-build": "^1.4.2",
-		"@sap/grunt-sapui5-bestpractice-test": "^2.0.1",
 		"@ui5/cli": "^2.2.2",
 		"eslint": "^6.8.0",
 		"grunt": "^1.1.0",
