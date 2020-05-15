@@ -8,5 +8,10 @@ pipeline {
                 sh 'npm run-script build'
             }
         }
+        stage('test') {
+            steps {
+                sh 'npm run-script test'
+            }
+        }
     }
 }
