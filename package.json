@@ -16,7 +16,9 @@
 		"build-self-contained": "ui5 build self-contained -a --clean-dest",
 		"serve-dist": "ws --compress -d dist"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"puppeteer": "^3.0.4"
+	},
 	"devDependencies": {
 		"@sap/grunt-sapui5-bestpractice-build": "^1.4.2",
 		"@ui5/cli": "^2.2.2",
