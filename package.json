@@ -9,9 +9,9 @@
 		"karma": "karma start",
 		"karma-ci": "rimraf coverage && karma start karma-ci.conf.js",
 		"watch": "npm run karma",
-		"test-o": "npm run lint && npm run karma-ci",
+		"test": "npm run lint && npm run karma-ci",
 		"build": "ui5 build -a --clean-dest",
-		"test": "grunt testProject --verbose",
+		"test-o": "grunt testProject --verbose",
 		"build-o": "grunt buildProject --verbose",
 		"build-self-contained": "ui5 build self-contained -a --clean-dest",
 		"serve-dist": "ws --compress -d dist"
