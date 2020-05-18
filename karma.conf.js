@@ -1,4 +1,3 @@
-process.env.CHROME_BIN = require('puppeteer').executablePath()
 module.exports = function(config) {
 	"use strict";
 
@@ -19,7 +18,7 @@ module.exports = function(config) {
 		customLaunchers: {
 			CustomChrome: {
 				base: "Chrome",
-				flags: ['--no-sandbox']
+				flags: chromeFlags
 			},
 			CustomChromeHeadless: {
 				base: "ChromeHeadless",
