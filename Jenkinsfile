@@ -8,11 +8,7 @@ pipeline {
             }
         }
         stage('test') {
-            environment {
-                CHROME_BIN = '/usr/bin/google-chrome'
-            }
             steps {
-                echo "CHROME_BIN:  ${CHROME_BIN}"
                 sh 'npm run-script test'
             }
         }        
