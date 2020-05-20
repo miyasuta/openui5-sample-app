@@ -1,8 +1,5 @@
-process.env.CHROME_BIN = require('puppeteer').executablePath()
 module.exports = function(config) {
 	"use strict";
-
-	console.log("CHROME_BIN: " + process.env.CHROME_BIN);
 
 	var chromeFlags = [
 		"--window-size=1280,1024"

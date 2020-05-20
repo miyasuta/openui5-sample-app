@@ -33,9 +33,7 @@ module.exports = function(config) {
 
 		browsers: ["CustomChromeHeadless"],
 
-		singleRun: true,
-
-		captureTimeout: 120000
+		singleRun: true
 
 	});
 };

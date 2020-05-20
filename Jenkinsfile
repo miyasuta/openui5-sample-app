@@ -1,8 +1,9 @@
 pipeline {
-    agent { docker { image 'geekykaran/headless-chrome-node-docker' } }
+    agent { docker { image 'rastasheep/alpine-node-chromium' } }
     stages {
         stage('prepare') {
             steps {
+                echo "CHROME_BIN : ${DB_ENGINE}"
                 sh 'npm config set @sap:registry https://npm.sap.com'
                 sh 'npm install'
             }
