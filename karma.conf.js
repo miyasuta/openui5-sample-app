@@ -22,7 +22,7 @@ module.exports = function(config) {
 			},
 			CustomChromeHeadless: {
 				base: "ChromeHeadless",
-				flags: ['--no-sandbox']
+				flags: chromeFlags
 			}
 		},
 
