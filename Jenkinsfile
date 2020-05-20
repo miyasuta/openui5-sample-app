@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'rastasheep/alpine-node-chromium:latest' } }
+    agent { docker { dockerfile true } }
     stages {
         stage('prepare') {
             steps {
