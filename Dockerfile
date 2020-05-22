@@ -18,7 +18,7 @@ ENV LIGHTHOUSE_CHROMIUM_PATH /usr/bin/chromium-browser
 
 # Add a chrome user
 RUN addgroup -g 1001 chrome && \
-    useradd  -g      chrome -G sudo -m -s /bin/bash chrome
+    adduser  -g      chrome -G sudo -m -s /bin/bash chrome
 # RUN adduser -g 1001 -S chrome && \
 #     adduser -u 1001 -S chrome -G chrome
 
