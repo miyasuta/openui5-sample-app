@@ -16,8 +16,7 @@
 		"build-self-contained": "ui5 build self-contained -a --clean-dest",
 		"serve-dist": "ws --compress -d dist"
 	},
-	"dependencies": {
-	},
+	"dependencies": {},
 	"devDependencies": {
 		"@sap/grunt-sapui5-bestpractice-build": "^1.4.2",
 		"@ui5/cli": "^2.2.2",
@@ -26,6 +25,7 @@
 		"karma": "^4.4.1",
 		"karma-chrome-launcher": "^3.1.0",
 		"karma-coverage": "^2.0.2",
+		"karma-qunit": "^4.1.1",
 		"karma-ui5": "^2.1.0",
 		"local-web-server": "^3.0.7",
 		"rimraf": "^3.0.2"
