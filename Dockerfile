@@ -17,8 +17,10 @@ ENV CHROME_BIN /usr/bin/chromium-browser
 ENV LIGHTHOUSE_CHROMIUM_PATH /usr/bin/chromium-browser
 
 # Add a chrome user
-RUN groupadd -g 1000 chrome && \
-    useradd  -g      chrome -G sudo -m -s /bin/bash chrome
+# RUN groupadd -g 1000 chrome && \
+#     useradd  -g      chrome -G sudo -m -s /bin/bash chrome
+RUN addgroup -g 1000 -S chrome && \
+    adduser -u 1000 -S chrome -G chrome
 
 USER chrome
 RUN whoami
