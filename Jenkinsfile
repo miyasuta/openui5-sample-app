@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         dockerfile {
-            args '--security-opt seccomp=chromium.json'
+            args '--cap-add=SYS_ADMIN'
         }    
     }
     stages {
