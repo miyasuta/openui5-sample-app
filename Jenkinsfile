@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         dockerfile {
-            args '--security-opt seccomp=seccomp/chromium.json -v `pwd`/node-ci-demo:/app'
+            args '--privileged'
         }    
     }
     stages {
