@@ -1,26 +1,25 @@
-FROM node:12-alpine
+# chromium > 76 is required. For now, this is only available in the 'edge' build
+FROM alpine:edge
 
-MAINTAINER Aleksandar Diklic "https://github.com/rastasheep"
+# Install chromium, some dependnecies, node and dumb-init
+RUN apk add --no-cache \
+      chromium nss freetype freetype-dev harfbuzz ca-certificates ttf-freefont \
+      nodejs npm \
+      dumb-init
 
-RUN \
-  echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
-  && echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
-  && echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
-  && apk --no-cache  update \
-  && apk --no-cache  upgrade \
-  && apk add --no-cache --virtual .build-deps \
-    gifsicle pngquant optipng libjpeg-turbo-utils \
-    udev ttf-opensans chromium \
-  && rm -rf /var/cache/apk/* /tmp/*
+# Add user so we don't need --no-sandbox.
+RUN addgroup -S chromium &&\
+    adduser -S -g chromium chromium &&\
+    mkdir /app &&\
+    chown -R chromium:chromium /app
 
-ENV CHROME_BIN /usr/bin/chromium-browser
-ENV LIGHTHOUSE_CHROMIUM_PATH /usr/bin/chromium-browser
+# Run everything after as non-privileged user.
+USER chromium
 
-# Add a chrome user
-RUN addgroup -g 1001 chrome && \
-    adduser  -g      chrome -G sudo -m -s /bin/bash chrome
-# RUN adduser -g 1001 -S chrome && \
-#     adduser -u 1001 -S chrome -G chrome
+# Set CHROME_BIN to avoid tweaking config files (e.g. karma.conf.js)
+ENV CHROME_BIN=/usr/bin/chromium-browser
 
-USER chrome
-RUN whoami
+WORKDIR /app
+
+# dumb-init avoids having zombie Chrome processes
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
