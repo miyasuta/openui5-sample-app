@@ -19,7 +19,7 @@
 	"dependencies": {},
 	"devDependencies": {
 		"@sap/grunt-sapui5-bestpractice-build": "^1.4.2",
-		"@ui5/cli": "^2.2.2",
+		"@ui5/cli": "^2.2.4",
 		"eslint": "^6.8.0",
 		"grunt": "^1.1.0",
 		"karma": "^4.4.1",
@@ -28,6 +28,7 @@
 		"karma-qunit": "^4.1.1",
 		"karma-ui5": "^2.1.0",
 		"local-web-server": "^3.0.7",
+		"nwabap-ui5uploader": "^0.3.4",
 		"rimraf": "^3.0.2"
 	}
 }

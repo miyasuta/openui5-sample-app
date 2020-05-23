@@ -1,0 +1,10 @@
+{
+    "base": "./dist", 
+    "conn_server": "http://sts4dev.st.com:8001", 
+    "conn_user": "mob67",                 
+    "conn_password": "new@1234",             
+    "abap_package": "ZMOB67_MAY",                
+    "abap_bsp": "ZMOB67_001",            
+    "abap_bsp_text": "sap.ui.demo.todo",
+    "abap_transport": "S4DK900497"
+}
