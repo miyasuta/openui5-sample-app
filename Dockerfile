@@ -9,17 +9,13 @@ RUN apk add --no-cache \
 
 # Add user so we don't need --no-sandbox.
 RUN addgroup -S chromium &&\
-    adduser -S -g chromium chromium &&\
-    mkdir /app &&\
-    chown -R chromium:chromium /app
+    adduser -S -g chromium chromium
 
 # Run everything after as non-privileged user.
 USER chromium
 
 # Set CHROME_BIN to avoid tweaking config files (e.g. karma.conf.js)
 ENV CHROME_BIN=/usr/bin/chromium-browser
-
-WORKDIR /app
 
 # dumb-init avoids having zombie Chrome processes
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
