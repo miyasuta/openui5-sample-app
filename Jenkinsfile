@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         dockerfile {
-            args '--security-opt seccomp=$(pwd)/chromium.json'
+            args '--security-opt seccomp=chromium.json'
         }    
     }
     stages {
