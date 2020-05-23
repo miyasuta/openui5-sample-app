@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('prepare') {
             steps {
-                echo 'workspace directory is ${WORKSPACE}'
+                echo 'workspace directory is ${env.WORKSPACE}'
                 sh 'npm config set @sap:registry https://npm.sap.com'
                 sh 'npm install'
             }
