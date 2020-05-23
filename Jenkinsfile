@@ -1,7 +1,7 @@
 pipeline {
     agent { 
         dockerfile {
-            args '--cap-add=SYS_ADMIN'
+            args '--security-opt seccomp=/tmp/jenkins_home_volume/myseccomp/chrome.json'
         }    
     }
     stages {
