@@ -23,5 +23,11 @@ pipeline {
                 sh 'npm run-script build'
             }
         }
+        stage('deploy') {
+            steps {
+
+                sh 'npm run-script upload'
+            }
+        }        
     }
 }
