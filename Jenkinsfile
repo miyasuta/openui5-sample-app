@@ -29,7 +29,7 @@ pipeline {
             steps {
                 echo "host: ${env.ABAP_DEVELOPMENT_SERVER_HOST}"
                 echo "credentials: ${env.ABAP_DEVELOPMENT_CREDS}"
-                sh 'npx nwabap upload --conn_server ${env.ABAP_DEVELOPMENT_SERVER_HOST}'
+                sh "npx nwabap upload --conn_server ${env.ABAP_DEVELOPMENT_SERVER_HOST}"
             }
         }        
     }
