@@ -12,8 +12,6 @@
 		"test": "npm run lint && npm run karma-ci",
 		"build": "ui5 build -a --clean-dest",
 		"upload": "npx nwabap upload",
-		"test-o": "grunt testProject --verbose",
-		"build-o": "grunt buildProject --verbose",
 		"build-self-contained": "ui5 build self-contained -a --clean-dest",
 		"serve-dist": "ws --compress -d dist"
 	},
