@@ -23,9 +23,13 @@ pipeline {
             }
         }
         stage('deploy') {
+            environment {
+                ABAP_DEVELOPMENT_CREDS = credentials('abap_login')
+            }
             steps {
-
-                sh 'npm run-script upload'
+                echo "host: ${env.ABAP_DEVELOPMENT_SERVER_HOST}"
+                echo "credentials: ${env.ABAP_DEVELOPMENT_CREDS}"
+                sh 'npx nwabap upload --conn_server ${env.ABAP_DEVELOPMENT_SERVER_HOST}  --conn_user ${env.ABAP_DEVELOPMENT_CREDS_USR} --conn_password ${env.ABAP_DEVELOPMENT_CREDS_PSW}'
             }
         }        
     }
