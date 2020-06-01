@@ -25,8 +25,6 @@ pipeline {
         stage('deploy') {
             environment {
                 ABAP_DEVELOPMENT_CREDS = credentials('abap_login')
-                ABAP_USER = ABAP_DEVELOPMENT_CREDS_USR
-                ABAP_PASS = ABAP_DEVELOPMENT_CREDS_PSW
             }
             steps {
                 echo "host: ${env.ABAP_DEVELOPMENT_SERVER_HOST}"
