@@ -1,5 +1,7 @@
 {
-    "base": "./dist",        
+    "base": "./dist", 
+    "conn_user": "mob67",
+    "conn_password": "new@1234",           
     "abap_package": "ZMOB67_MAY",                
     "abap_bsp": "ZMOB67_001",            
     "abap_bsp_text": "sap.ui.demo.todo",
