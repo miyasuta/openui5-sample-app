@@ -29,6 +29,7 @@ pipeline {
             steps {
                 echo "user: ${ABAP_DEVELOPMENT_CREDS_USR}"
                 echo "pass: ${ABAP_DEVELOPMENT_CREDS_PSW}"
+                echo "branch: ${env.BRANCH_NAME}"
                 sh "npx nwabap upload --conn_server ${env.ABAP_DEVELOPMENT_SERVER_HOST} --conn_user ${ABAP_DEVELOPMENT_CREDS_USR} --conn_password ${ABAP_DEVELOPMENT_CREDS_PSW}"
             }
         }        
