@@ -27,7 +27,9 @@ pipeline {
                 ABAP_DEVELOPMENT_CREDS = credentials('abap_login')
             }
             steps {
-                sh "npx nwabap upload --conn_server ${env.ABAP_DEVELOPMENT_SERVER_HOST} --conn_user ${$ABAP_DEVELOPMENT_CREDS_USR} --conn_password ${$ABAP_DEVELOPMENT_CREDS_PSW}"
+                echo "user: ${ABAP_DEVELOPMENT_CREDS_USR}"
+                echo "pass: ${ABAP_DEVELOPMENT_CREDS_PSW}"
+                sh "npx nwabap upload --conn_server ${env.ABAP_DEVELOPMENT_SERVER_HOST} --conn_user ${ABAP_DEVELOPMENT_CREDS_USR} --conn_password ${ABAP_DEVELOPMENT_CREDS_PSW}"
             }
         }        
     }
