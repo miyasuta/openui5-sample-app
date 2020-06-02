@@ -23,6 +23,9 @@ pipeline {
             }
         }
         stage('deploy') {
+            when {
+                branch 'master'
+            }            
             environment {
                 ABAP_DEVELOPMENT_CREDS = credentials('abap_login')
             }
