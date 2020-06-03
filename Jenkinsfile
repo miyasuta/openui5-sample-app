@@ -11,17 +11,17 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('test') {
-            steps {
-                sh 'npm run-script test'
-            }
-        }        
         stage('build') {
             steps {
 
                 sh 'npm run-script build'
             }
-        }
+        }        
+        stage('test') {
+            steps {
+                sh 'npm run-script test'
+            }
+        }        
         stage('deploy') {
             when {
                 branch 'master'
