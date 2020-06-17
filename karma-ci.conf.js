@@ -4,8 +4,15 @@ module.exports = function(config) {
 	require("./karma.conf")(config);
 	config.set({
 
+		ui5: {
+			type: "application",
+			paths: {
+				webapp: "dist"
+			}			
+		},	
+
 		preprocessors: {
-			"{webapp,webapp/!(test)}/*.js": ["coverage"]
+			"{dist,dist/!(test)}/!(*dbg*|Component).js": ["coverage"]
 		},
 
 		coverageReporter: {
